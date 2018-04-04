@@ -20,19 +20,20 @@ machines = {'user100': 'yogi',
 
 # (a)	user14 no longer has a machine assigned
 machines['user14'] = None
- 
-# (b)	The name of user16's machine is changed to 'cinnamon' 
+
+# (b)	The name of user16's machine is changed to 'cinnamon'
 machines['user15'] = 'cinnamon'
 
 # (c)	user16 is leaving the company,
 # and a new user, user17, will be assigned his machine
 machines['user17'] = machines['user16']
 del machines['user16']
- 
+
 # (d)	user4, user5, and user6 are all leaving at exactly the same time,
 # but their machine names are to be stored in a list called unallocated.
 unallocated = []
-unallocated += machines.pop('user4'), machines.pop('user5'), machines.pop('user6')
+unallocated += machines.pop('user4'), machines.pop('user5')
+unallocated += machines.pop('user6')
 # (e) user8 gets another machine called 'kodiak' in addition
 machines['user8'] = [machines['user8'], "kodiak"]
 
